@@ -1,5 +1,7 @@
 * {
 	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html,
@@ -7,7 +9,8 @@ body {
 	--black: hsl(240, 6%, 13%);
 	--gray: hsl(240, 9%, 89%);
 
-	height: 100%;
+	background: linear-gradient(hsl(0, 0%, 0%), hsl(0, 0%, 19%));
+	height: 100vh;
 	font-family: "Roboto", sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
@@ -18,10 +21,13 @@ body {
 }
 
 main {
+	position: relative;
 	background: url("images/background.svg") no-repeat center/cover;
 	width: 100vw;
 	min-height: 812px;
 	height: 100vh;
+	display: flex;
+	justify-content: center;
 }
 
 .container {
@@ -86,4 +92,56 @@ ul {
 	gap: 0.5rem;
 
 	justify-content: center;
+}
+
+hr {
+	display: none;
+}
+
+.faixa {
+	display: none;
+}
+
+.degrade {
+	display: none;
+}
+
+@media (min-width: 700px) {
+	main {
+		max-width: 450px;
+		min-height: 683px;
+		max-height: 683px;
+	}
+	.holder {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		bottom: 600px;
+		width: 120px;
+	}
+
+	.faixa {
+		display: flex;
+		width: 118px;
+		margin-left: 2px;
+	}
+
+	hr {
+		display: flex;
+		border: 2px solid #000;
+		width: 122px;
+	}
+	.degrade {
+		display: flex;
+		position: absolute;
+		top: -0.75rem;
+		left: 0.75rem;
+	}
+
+	.degrade-holder {
+		display: flex;
+	}
+}
+
+@media (min-width: 700px) and (max-width: 1366) {
 }
